@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>会社概要｜合同会社tsukichiyo</title>
+  <meta name="description" content="合同会社tsukichiyoの会社概要ページです。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink-900: #111827;
+      --ink-700: #374151;
+      --ink-500: #6b7280;
+      --surface-100: #ffffff;
+      --surface-200: #f7f7f5;
+      --border-100: #e5e7eb;
+      --accent-500: #4da3ff;
+      --accent-600: #2e7de0;
+      --max-width: 880px;
+      --font-sans: "Inter", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Helvetica, Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI",
+        "Yu Gothic", "Meiryo", sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--ink-900);
+      background: var(--surface-100);
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border-100);
+      background: #fff;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--ink-700);
+    }
+
+    .logo {
+      font-weight: 600;
+      color: var(--ink-900);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .nav-cta {
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: var(--accent-500);
+      color: #fff;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    main {
+      padding: 56px 0 72px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .lead {
+      color: var(--ink-700);
+      margin-bottom: 32px;
+      font-size: 14px;
+    }
+
+    .company-table {
+      border: 1px solid var(--border-100);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .company-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 16px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-100);
+      align-items: center;
+    }
+
+    .company-row:last-child {
+      border-bottom: none;
+    }
+
+    .company-label {
+      color: var(--ink-500);
+      font-size: 13px;
+    }
+
+    .company-value {
+      font-size: 14px;
+    }
+
+    .placeholder {
+      min-height: 32px;
+      border: 1px dashed var(--border-100);
+      border-radius: 8px;
+      background: var(--surface-200);
+    }
+
+    .note {
+      font-size: 12px;
+      color: var(--ink-500);
+      margin-top: 8px;
+    }
+
+    .cta {
+      margin-top: 32px;
+      padding: 16px;
+      border: 1px solid var(--border-100);
+      border-radius: 12px;
+      background: var(--surface-200);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-100);
+      padding: 24px 0 32px;
+      color: var(--ink-500);
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 720px) {
+      .company-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="../index.html">ヨリソイDX</a>
+      <div class="nav-links">
+        <a href="../index.html">サービスLP</a>
+        <a href="../privacy/index.html">プライバシーポリシー</a>
+      </div>
+      <a class="nav-cta" href="../index.html#contact">資料請求</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1>会社概要</h1>
+      <p class="lead">合同会社tsukichiyoの基本情報です。</p>
+
+      <div class="company-table">
+        <div class="company-row">
+          <div class="company-label">会社名</div>
+          <div class="company-value">合同会社tsukichiyo</div>
+        </div>
+        <div class="company-row">
+          <div class="company-label">代表者</div>
+          <div class="company-value">長木 辰樹</div>
+        </div>
+        <div class="company-row">
+          <div class="company-label">所在地</div>
+          <div class="company-value">〒536-0024 大阪府大阪市城東区中浜1-17-14-4J</div>
+        </div>
+        <div class="company-row">
+          <div class="company-label">連絡先</div>
+          <div class="company-value">info＠tsukichiyo.jp</div>
+        </div>
+        <div class="company-row">
+          <div class="company-label">事業内容</div>
+          <div class="company-value placeholder"></div>
+        </div>
+        <div class="company-row">
+          <div class="company-label">設立</div>
+          <div class="company-value placeholder"></div>
+        </div>
+        <div class="company-row">
+          <div class="company-label">資本金</div>
+          <div class="company-value placeholder"></div>
+        </div>
+      </div>
+      <p class="note">※メール送信時は「＠」を半角にしてください。</p>
+
+      <div class="cta">
+        <div>ヨリソイDXのサービス詳細はこちら</div>
+        <a class="nav-cta" href="../index.html">サービスLPを見る</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="../index.html">サービスLP</a>
+        <a href="../privacy/index.html">プライバシーポリシー</a>
+      </div>
+      <div>© 2026 ヨリソイDX. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>
