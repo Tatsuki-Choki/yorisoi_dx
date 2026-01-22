@@ -824,7 +824,7 @@
   </footer>
 
   <script>
-    const FORM_ENDPOINT = "";
+    const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1463858726661394525/0vtiCqC19J1ELvuAUwv9mxOfsjZGtgpqgM_S52ud1gE7oi3Dwzaaxtq2fnRoFro74xcy";
     const form = document.getElementById("request-form");
     const status = document.getElementById("form-status");
     const downloadPanel = document.getElementById("download-panel");
@@ -838,23 +838,41 @@
       }
 
       const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
       let submitted = true;
 
-      if (FORM_ENDPOINT) {
-        try {
-          const response = await fetch(FORM_ENDPOINT, {
-            method: "POST",
-            body: formData,
-          });
-          submitted = response.ok;
-        } catch (error) {
-          submitted = false;
-        }
+      // Discord Webhookに送信
+      try {
+        const embed = {
+          title: "📩 新しい資料請求がありました",
+          color: 0x4da3ff,
+          fields: [
+            { name: "会社名", value: data.company || "未入力", inline: true },
+            { name: "氏名", value: data.name || "未入力", inline: true },
+            { name: "役職", value: data.role || "未入力", inline: true },
+            { name: "従業員規模", value: data.size || "未選択", inline: true },
+            { name: "電話番号", value: data.phone || "未入力", inline: true },
+            { name: "メールアドレス", value: data.email || "未入力", inline: false },
+            { name: "相談内容", value: data.message || "未入力", inline: false },
+          ],
+          timestamp: new Date().toISOString(),
+          footer: { text: "ヨリソイDX 資料請求フォーム" }
+        };
+
+        const response = await fetch(DISCORD_WEBHOOK, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ embeds: [embed] }),
+        });
+        submitted = response.ok;
+      } catch (error) {
+        console.error("Discord通知エラー:", error);
+        submitted = false;
       }
 
       status.textContent = submitted
         ? "送信を受け付けました。資料をダウンロードしてください。"
-        : "送信は受け付けました。資料をダウンロードしてください。";
+        : "送信に問題がありましたが、資料はダウンロードできます。";
       downloadPanel.classList.add("show");
       form.reset();
 
