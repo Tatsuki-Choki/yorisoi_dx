@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -189,15 +190,27 @@
     }
 
     .image-wide {
-      height: 180px;
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 12px;
+      margin-bottom: 24px;
     }
 
     .image-hero {
-      height: 220px;
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 12px;
     }
 
     .image-portrait {
-      height: 260px;
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      border-radius: 8px;
     }
 
     section {
@@ -458,6 +471,15 @@
       flex-wrap: wrap;
     }
 
+    .benefit-card {
+      /* アイコンリストなどの左カラム用 */
+    }
+
+    .benefit-card .list li {
+      margin-bottom: 24px;
+    }
+
+
     @media (max-width: 720px) {
       .nav-links {
         display: none;
@@ -496,6 +518,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container nav">
@@ -538,7 +561,6 @@
             導入後の定着までサポート
           </div>
         </div>
-        <div class="image-placeholder image-hero">推奨：中小企業のオフィス/会議風景（人物あり・自然光・清潔感）</div>
       </div>
     </section>
 
@@ -549,7 +571,7 @@
           「とりあえずAIを使ってみたい」という段階でも大丈夫です。
           まず成果が出やすいポイントを整理し、無理なく始められる形にします。
         </p>
-        <div class="image-placeholder image-wide" aria-hidden="true">推奨：業務フローのイメージ（抽象的な図/作業中の手元）</div>
+        <img src="assets/workflow_ai_concept.png" alt="AIによる業務効率化のイメージ" class="image-wide">
         <div class="grid-2">
           <div class="flat-card">
             <h3>相談後に分かること</h3>
@@ -609,8 +631,7 @@
             </div>
             <div class="pricing-cell" data-label="価格">
               <div class="price-stack">
-                <div class="price-main">税別 0円</div>
-                <div class="price-sub">税込 0円</div>
+                <div class="price-main" style="color: var(--accent-600); font-size: 28px;">完全無料</div>
               </div>
               <div class="price-note">追加費用なし</div>
             </div>
@@ -651,7 +672,6 @@
                 <div class="price-main">税別 30万円</div>
                 <div class="price-sub">税込 33万円</div>
               </div>
-              <div class="price-note">利用できる助成金があるかもしれません。申し込み前に一度ご相談ください。</div>
             </div>
             <div class="pricing-cell" data-label="主な内容">
               <ul class="list">
@@ -659,6 +679,12 @@
                 <li>役員向け：20〜30時間の短期コース</li>
                 <li>AIの基礎から要件定義まで</li>
               </ul>
+              <div
+                style="margin-top: 16px; padding: 10px; background: #e7f2ff; border-radius: 8px; font-size: 13px; color: var(--accent-600);">
+                <strong>最大50%助成対象</strong><br>
+                人材開発支援助成金の対象となる可能性があります。<br>
+                実質、負担を大幅に抑えられる可能性があるので、詳しくはご相談ください。
+              </div>
             </div>
           </div>
         </div>
@@ -738,23 +764,59 @@
       </div>
     </section>
 
-    <section id="contact" class="contact">
+    <section id="contact" style="background-color: #f0f7ff; padding: 80px 20px;">
       <div class="container">
-        <h2 class="section-title">資料請求はこちら</h2>
-        <p class="section-lead">送信後に資料をすぐダウンロードできます。まずは内容を確認したい方に。</p>
-        <div class="grid-2">
-          <div class="flat-card">
-            <h3>資料請求でわかること</h3>
-            <ul class="list">
-              <li>導入の進め方と全体像</li>
-              <li>必要な費用の見通し</li>
-              <li>自社に合う支援内容</li>
+        <h2 class="section-title">資料請求・無料相談</h2>
+        <p class="section-lead">3分でわかる「AI活用地図」を無料でお渡ししています。</p>
+        <div class="grid-2" style="align-items: flex-start;">
+
+          <!-- 左カラム：ベネフィット -->
+          <div class="benefit-card" style="padding: 0 10px;">
+            <h3 style="font-size: 24px; margin-bottom: 24px; color: var(--ink-600);">
+              <span style="color: var(--accent-600);">迷いをなくす</span><br>導入ガイドブック
+            </h3>
+            <p style="margin-bottom: 32px; line-height: 1.8; color: var(--ink-500);">
+              「どこから手を付けるべきか」「費用対効果はどうなるか」。<br>
+              多くの企業が抱える疑問を解消するためのガイドブックです。<br>
+              無理な営業は一切いたしませんので、情報収集にお役立てください。
+            </p>
+
+            <ul class="list" style="gap: 20px;">
+              <li style="display: flex; align-items: flex-start; gap: 12px;">
+                <div
+                  style="background: var(--accent-600); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  📄</div>
+                <div>
+                  <strong>失敗しない3つのステップ</strong><br>
+                  <span style="font-size: 13px; color: var(--ink-400);">小規模から始めて成果を出すための具体的な手順を解説。</span>
+                </div>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 12px;">
+                <div
+                  style="background: var(--accent-600); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  💰</div>
+                <div>
+                  <strong>費用感と助成金活用</strong><br>
+                  <span style="font-size: 13px; color: var(--ink-400);">概算コストや、使える助成金の条件をわかりやすく整理。</span>
+                </div>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 12px;">
+                <div
+                  style="background: var(--accent-600); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  🏢</div>
+                <div>
+                  <strong>業界別の導入事例集</strong><br>
+                  <span style="font-size: 13px; color: var(--ink-400);">同業他社がどのような課題をどう解決したかを知れます。</span>
+                </div>
+              </li>
             </ul>
-            <div class="image-placeholder image-portrait" style="margin-top: 12px;">推奨：資料PDFの表紙モック（タイトル＋淡い水色）</div>
-            <p class="form-note" style="margin-top: 10px;">送信内容はDiscordへ通知されるよう設定予定です。</p>
           </div>
-          <div class="flat-card">
+
+          <!-- 右カラム：フォーム -->
+          <div class="flat-card"
+            style="background: white; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: none; border-radius: 16px;">
             <form id="request-form" novalidate>
+              <h3 style="margin-bottom: 20px; font-size: 18px;">資料請求フォーム</h3>
               <label>
                 会社名（必須）
                 <input type="text" name="company" autocomplete="organization" required />
@@ -799,8 +861,10 @@
                 <input type="checkbox" name="consent" required />
                 <span>個人情報の取り扱いに同意します</span>
               </label>
-              <button class="btn-primary" type="submit">資料請求を送信</button>
-              <span class="form-note" id="form-status">送信後に資料ダウンロードが表示されます。</span>
+              <button class="btn-primary" type="submit"
+                style="width: 100%; padding: 14px; font-size: 16px;">資料請求を送信</button>
+              <span class="form-note" id="form-status"
+                style="display: block; text-align: center; margin-top: 12px;">送信後に資料ダウンロードが表示されます。</span>
               <div class="download-panel" id="download-panel">
                 送信ありがとうございます。こちらから資料をダウンロードしてください。
                 <a class="btn-ghost" id="download-link" href="assets/yorisoi-dx-brochure.pdf" download>PDFをダウンロード</a>
@@ -882,4 +946,5 @@
     });
   </script>
 </body>
+
 </html>
