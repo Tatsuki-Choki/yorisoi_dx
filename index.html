@@ -652,6 +652,7 @@
 
     .faq-list {
       display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 14px;
     }
 
@@ -751,6 +752,47 @@
       align-items: flex-start;
     }
 
+    .contact-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(18, 20, 26, 0.35);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      padding: 20px;
+    }
+
+    .modal-overlay.show {
+      display: flex;
+    }
+
+    .modal {
+      width: min(420px, 100%);
+      background: #fff;
+      border: 1px solid var(--border-100);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .modal h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      font-family: var(--font-display);
+    }
+
+    .modal p {
+      font-size: 14px;
+      color: var(--ink-700);
+      margin-bottom: 16px;
+    }
+
     footer {
       border-top: 1px solid var(--border-100);
       padding: 32px 0 40px;
@@ -838,6 +880,10 @@
       .compare-row .compare-cell:last-child {
         border-bottom: none;
       }
+
+      .faq-list {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -848,9 +894,12 @@
       <div class="logo">ヨリソイDX</div>
       <nav class="nav-links" aria-label="セクション">
         <a href="#problems">課題</a>
-        <a href="#usecases">活用領域</a>
+        <a href="#usecases">活動領域</a>
         <a href="#pricing">料金</a>
         <a href="#faq">FAQ</a>
+        <a href="company/index.html">会社概要</a>
+        <a href="privacy/index.html">プライバシーポリシー</a>
+        <a href="#contact">資料請求</a>
       </nav>
       <a class="nav-cta" href="#contact">資料請求</a>
     </div>
@@ -1200,19 +1249,20 @@
             <div class="pricing-cell" data-label="価格">
               <div class="price-tier">
                 <div class="price-tier-label">1組織 1〜5名</div>
-                <div class="price-main">税別 30万円</div>
-                <div class="price-sub">（税込 33万円）</div>
+                <div class="price-main">税別 30万円 / 人</div>
+                <div class="price-sub">（税込 33万円 / 人）</div>
               </div>
               <div class="price-tier">
                 <div class="price-tier-label">1組織 6〜9名</div>
-                <div class="price-main">税別 25万円</div>
-                <div class="price-sub">（税込 27.5万円）</div>
+                <div class="price-main">税別 25万円 / 人</div>
+                <div class="price-sub">（税込 27.5万円 / 人）</div>
               </div>
               <div class="price-tier">
                 <div class="price-tier-label">1組織 10名以上</div>
-                <div class="price-main">税別 20万円</div>
-                <div class="price-sub">（税込 22万円）</div>
+                <div class="price-main">税別 20万円 / 人</div>
+                <div class="price-sub">（税込 22万円 / 人）</div>
               </div>
+              <div class="price-note">合計金額は「人数 × 単価」で算出します。</div>
             </div>
             <div class="pricing-cell" data-label="主な内容">
               <ul class="list">
@@ -1239,7 +1289,7 @@
         <div class="section-head">
           <div class="eyebrow">導入フロー</div>
           <h2 class="section-title">資料請求から、迷わず進められる流れ</h2>
-          <p class="section-lead">ヒアリングから試験導入までをシンプルに整理しました。</p>
+          <p class="section-lead">資料請求後、ヒアリング→判断→デモ→試験導入まで一貫して進められます。</p>
         </div>
         <div class="flow">
           <div class="flat-card flow-step">
@@ -1281,7 +1331,7 @@
       </div>
     </section>
 
-    <section id="faq" class="faq">
+    <section id="faq" class="faq section-muted">
       <div class="container">
         <div class="section-head">
           <div class="eyebrow">FAQ</div>
@@ -1323,7 +1373,7 @@
           <h2 class="section-title">資料請求・無料相談</h2>
           <p class="section-lead">3分でわかる「AI活用地図」を無料でお渡ししています。</p>
         </div>
-        <div class="grid-2 contact-grid">
+        <div class="contact-stack">
           <div class="flat-card">
             <div class="pill">無料相談つき</div>
             <h3 style="margin-top: 16px;">導入判断に必要な情報を短く整理</h3>
@@ -1404,17 +1454,21 @@
                 資料請求を送信
               </button>
               <span class="form-note" id="form-status"
-                style="display: block; text-align: center; margin-top: 12px;">送信後に資料ダウンロードが表示されます。</span>
-              <div class="download-panel" id="download-panel">
-                送信ありがとうございます。こちらから資料をダウンロードしてください。
-                <a class="btn-ghost" id="download-link" href="assets/yorisoi-dx-brochure.pdf" download>PDFをダウンロード</a>
-              </div>
+                style="display: block; text-align: center; margin-top: 12px;">送信後、メールで資料をお送りします。</span>
             </form>
           </div>
         </div>
       </div>
     </section>
   </main>
+
+  <div class="modal-overlay" id="submit-modal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="submit-modal-title">
+      <h3 id="submit-modal-title">資料請求が完了しました</h3>
+      <p id="submit-modal-text">メールをお待ちください。</p>
+      <button class="btn-primary" id="submit-modal-close" type="button">閉じる</button>
+    </div>
+  </div>
 
   <footer>
     <div class="container footer-grid">
@@ -1430,8 +1484,27 @@
   <script>
     const form = document.getElementById("request-form");
     const status = document.getElementById("form-status");
-    const downloadPanel = document.getElementById("download-panel");
-    const downloadLink = document.getElementById("download-link");
+    const modal = document.getElementById("submit-modal");
+    const modalText = document.getElementById("submit-modal-text");
+    const modalClose = document.getElementById("submit-modal-close");
+
+    const openModal = (message) => {
+      modalText.textContent = message;
+      modal.classList.add("show");
+      modal.setAttribute("aria-hidden", "false");
+    };
+
+    const closeModal = () => {
+      modal.classList.remove("show");
+      modal.setAttribute("aria-hidden", "true");
+    };
+
+    modalClose.addEventListener("click", closeModal);
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
@@ -1460,14 +1533,10 @@
       }
 
       status.textContent = submitted
-        ? "送信を受け付けました。資料をダウンロードしてください。"
-        : "送信に問題がありましたが、資料はダウンロードできます。";
-      downloadPanel.classList.add("show");
+        ? "資料請求が完了しました。メールをお待ちください。"
+        : "送信に問題がありました。時間をおいて再度お試しください。";
+      openModal(status.textContent);
       form.reset();
-
-      if (downloadLink) {
-        downloadLink.click();
-      }
     });
   </script>
 </body>
