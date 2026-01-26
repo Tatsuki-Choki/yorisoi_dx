@@ -3,24 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>会社概要｜合同会社tsukichiyo</title>
-  <meta name="description" content="合同会社tsukichiyoの会社概要ページです。" />
+  <title>会社概要｜ヨリソイDX</title>
+  <meta name="description" content="ヨリソイDXの会社概要ページです。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=LINE+Seed+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink-900: #111827;
-      --ink-700: #374151;
-      --ink-500: #6b7280;
-      --surface-100: #ffffff;
-      --surface-200: #f7f7f5;
-      --border-100: #e5e7eb;
-      --accent-500: #4da3ff;
-      --accent-600: #2e7de0;
-      --max-width: 880px;
-      --font-sans: "Inter", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Helvetica, Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI",
+      --ink-900: #12141a;
+      --ink-700: #30343c;
+      --ink-500: #5e636d;
+      --ink-400: #8b9098;
+      --surface-100: #f7f6f2;
+      --surface-200: #ffffff;
+      --surface-300: #f1efe9;
+      --border-100: #e3e1da;
+      --accent-500: #2b64df;
+      --accent-600: #1f52c9;
+      --accent-700: #173e9c;
+      --accent-50: #f3f6ff;
+      --max-width: 960px;
+      --font-sans: "LINE Seed JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+        "Yu Gothic UI", "Yu Gothic", "Meiryo", sans-serif;
+      --font-display: "LINE Seed JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans",
         "Yu Gothic", "Meiryo", sans-serif;
     }
 
@@ -33,7 +38,7 @@
     body {
       font-family: var(--font-sans);
       color: var(--ink-900);
-      background: var(--surface-100);
+      background: linear-gradient(180deg, #f7f6f2 0%, #f2f1ec 100%);
       line-height: 1.7;
       font-size: 16px;
       -webkit-font-smoothing: antialiased;
@@ -45,8 +50,12 @@
     }
 
     header {
+      position: sticky;
+      top: 0;
+      background: rgba(247, 246, 242, 0.9);
       border-bottom: 1px solid var(--border-100);
-      background: #fff;
+      backdrop-filter: blur(12px);
+      z-index: 10;
     }
 
     .container {
@@ -59,14 +68,17 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 0;
+      padding: 18px 0;
       gap: 12px;
-      font-size: 13px;
+      font-size: 12px;
       color: var(--ink-700);
     }
 
     .logo {
-      font-weight: 600;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      font-family: var(--font-display);
+      text-transform: uppercase;
       color: var(--ink-900);
     }
 
@@ -76,22 +88,43 @@
     }
 
     .nav-cta {
-      padding: 8px 16px;
-      border-radius: 8px;
-      background: var(--accent-500);
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--accent-600);
       color: #fff;
       font-weight: 600;
-      font-size: 13px;
+      font-size: 12px;
+      box-shadow: 0 10px 24px rgba(31, 82, 201, 0.25);
     }
 
     main {
-      padding: 56px 0 72px;
+      padding: 72px 0 80px;
+    }
+
+    .section-head {
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-500);
+      border: 1px solid var(--border-100);
+      border-radius: 999px;
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.7);
+      margin-bottom: 14px;
     }
 
     h1 {
-      font-size: 28px;
-      font-weight: 600;
-      margin-bottom: 8px;
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-family: var(--font-display);
     }
 
     .lead {
@@ -102,16 +135,17 @@
 
     .company-table {
       border: 1px solid var(--border-100);
-      border-radius: 12px;
+      border-radius: 20px;
       overflow: hidden;
       background: #fff;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
     }
 
     .company-row {
       display: grid;
-      grid-template-columns: 140px 1fr;
+      grid-template-columns: 160px 1fr;
       gap: 16px;
-      padding: 14px 16px;
+      padding: 16px 18px;
       border-bottom: 1px solid var(--border-100);
       align-items: center;
     }
@@ -132,22 +166,42 @@
     .placeholder {
       min-height: 32px;
       border: 1px dashed var(--border-100);
-      border-radius: 8px;
-      background: var(--surface-200);
+      border-radius: 10px;
+      background: var(--surface-300);
     }
 
     .note {
       font-size: 12px;
       color: var(--ink-500);
-      margin-top: 8px;
+      margin-top: 10px;
+    }
+
+    .message-card {
+      margin-top: 24px;
+      padding: 20px;
+      border-radius: 18px;
+      border: 1px solid var(--border-100);
+      background: #fff;
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
+    }
+
+    .message-card h2 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      font-family: var(--font-display);
+    }
+
+    .message-card p {
+      font-size: 14px;
+      color: var(--ink-700);
     }
 
     .cta {
       margin-top: 32px;
-      padding: 16px;
+      padding: 16px 20px;
       border: 1px solid var(--border-100);
-      border-radius: 12px;
-      background: var(--surface-200);
+      border-radius: 16px;
+      background: var(--surface-300);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -195,25 +249,28 @@
 
   <main>
     <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Company</div>
+      </div>
       <h1>会社概要</h1>
-      <p class="lead">合同会社tsukichiyoの基本情報です。</p>
+      <p class="lead">株式会社 KASEKI CREATIVEの基本情報です。</p>
 
       <div class="company-table">
         <div class="company-row">
           <div class="company-label">会社名</div>
-          <div class="company-value">合同会社tsukichiyo</div>
+          <div class="company-value">株式会社 KASEKI CREATIVE</div>
         </div>
         <div class="company-row">
           <div class="company-label">代表者</div>
-          <div class="company-value">長木 辰樹</div>
+          <div class="company-value">岡田 真治</div>
         </div>
         <div class="company-row">
           <div class="company-label">所在地</div>
-          <div class="company-value">〒536-0024 大阪府大阪市城東区中浜1-17-14-4J</div>
+          <div class="company-value">〒5720811 大阪府寝屋川市楠根南町５番１５号</div>
         </div>
         <div class="company-row">
           <div class="company-label">連絡先</div>
-          <div class="company-value">info＠tsukichiyo.jp</div>
+          <div class="company-value">s-okada@kaseki-creative.com</div>
         </div>
         <div class="company-row">
           <div class="company-label">事業内容</div>
@@ -229,6 +286,12 @@
         </div>
       </div>
       <p class="note">※メール送信時は「＠」を半角にしてください。</p>
+
+      <div class="message-card">
+        <h2>代表メッセージ</h2>
+        <p class="placeholder"></p>
+        <p class="note">※こちらに代表者メッセージをご入力ください。</p>
+      </div>
 
       <div class="cta">
         <div>ヨリソイDXのサービス詳細はこちら</div>
