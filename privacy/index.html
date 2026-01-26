@@ -81,6 +81,21 @@
       color: var(--ink-900);
     }
 
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .nav-cta {
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--accent-600);
+      color: #fff;
+      font-weight: 600;
+      font-size: 12px;
+    }
+
     main {
       padding: 72px 0 80px;
     }
@@ -144,14 +159,23 @@
   <header>
     <div class="container nav">
       <a class="logo" href="../index.html">ヨリソイDX</a>
-      <a href="../company/index.html">会社概要</a>
+      <div class="nav-links">
+        <a href="../index.html#problems">課題</a>
+        <a href="../index.html#usecases">活動領域</a>
+        <a href="../index.html#pricing">料金</a>
+        <a href="../index.html#faq">FAQ</a>
+        <a href="../company/index.html">会社概要</a>
+        <a href="../privacy/index.html">プライバシーポリシー</a>
+        <a href="../index.html#contact">資料請求</a>
+      </div>
+      <a class="nav-cta" href="../index.html#contact">資料請求</a>
     </div>
   </header>
 
   <main>
     <div class="container">
       <h1>プライバシーポリシー</h1>
-      <p>合同会社tsukichiyo（以下「当社」）は、以下の方針に基づき個人情報を取り扱います。</p>
+      <p>株式会社 KASEKI CREATIVE（以下「当社」）は、以下の方針に基づき個人情報を取り扱います。</p>
 
       <h2>1. 取得する情報</h2>
       <ul>
@@ -177,7 +201,7 @@
 
       <div class="policy-box">
         <strong>お問い合わせ窓口</strong>
-        <p>メール：info＠tsukichiyo.jp</p>
+        <p>メール：s-okada@kaseki-creative.com</p>
         <p class="note">※送信時は「＠」を半角にしてください。</p>
       </div>
     </div>
