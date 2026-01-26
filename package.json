@@ -1,0 +1,17 @@
+{
+  "name": "yorisoi-dx",
+  "version": "1.0.0",
+  "description": "ヨリソイDX ランディングページ",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site - no build step required'"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.3"
+  },
+  "devDependencies": {
+    "vercel": "^37.0.0"
+  }
+}

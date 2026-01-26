@@ -5,27 +5,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ヨリソイDX｜AIで業務をもっとシンプルに</title>
-  <meta name="description" content="中小企業の意思決定者向けに、AI活用の最適解を提案するヨリソイDX。明瞭な料金と導入後サポートで、安心して始められます。" />
+  <meta name="description" content="大企業・多拠点事業の意思決定者向けに、AI活用の最適解を提案するヨリソイDX。明瞭な料金と短期デモで、安心して始められます。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=LINE+Seed+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink-900: #111827;
-      --ink-700: #374151;
-      --ink-500: #6b7280;
-      --ink-400: #9ca3af;
-      --surface-100: #ffffff;
-      --surface-200: #f7f7f5;
-      --surface-300: #f9fafb;
-      --border-100: #e5e7eb;
-      --accent-500: #4da3ff;
-      --accent-600: #2e7de0;
-      --accent-100: #e7f2ff;
-      --max-width: 980px;
-      --section-padding: 88px 20px;
-      --font-sans: "Inter", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Helvetica, Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI",
+      --ink-900: #12141a;
+      --ink-700: #30343c;
+      --ink-500: #5e636d;
+      --ink-400: #8b9098;
+      --surface-100: #f7f6f2;
+      --surface-200: #ffffff;
+      --surface-300: #f1efe9;
+      --surface-400: #ebe9e2;
+      --border-100: #e3e1da;
+      --accent-500: #2b64df;
+      --accent-600: #1f52c9;
+      --accent-700: #173e9c;
+      --accent-100: #e6eefc;
+      --accent-50: #f3f6ff;
+      --max-width: 1040px;
+      --section-padding: 96px 20px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --font-sans: "LINE Seed JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+        "Yu Gothic UI", "Yu Gothic", "Meiryo", sans-serif;
+      --font-display: "LINE Seed JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans",
         "Yu Gothic", "Meiryo", sans-serif;
     }
 
@@ -42,7 +48,7 @@
     body {
       font-family: var(--font-sans);
       color: var(--ink-900);
-      background: var(--surface-100);
+      background: linear-gradient(180deg, #f7f6f2 0%, #f2f1ec 100%);
       line-height: 1.7;
       font-size: 16px;
       -webkit-font-smoothing: antialiased;
@@ -62,29 +68,32 @@
     header {
       position: sticky;
       top: 0;
-      background: rgba(255, 255, 255, 0.96);
+      background: rgba(247, 246, 242, 0.9);
       border-bottom: 1px solid var(--border-100);
       z-index: 10;
+      backdrop-filter: blur(12px);
     }
 
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 0;
-      gap: 16px;
+      padding: 18px 0;
+      gap: 18px;
     }
 
     .logo {
-      font-weight: 600;
-      font-size: 16px;
-      letter-spacing: 0.02em;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.16em;
+      font-family: var(--font-display);
+      text-transform: uppercase;
     }
 
     .nav-links {
       display: flex;
-      gap: 16px;
-      font-size: 13px;
+      gap: 18px;
+      font-size: 12px;
       color: var(--ink-700);
     }
 
@@ -98,12 +107,13 @@
     }
 
     .nav-cta {
-      padding: 8px 16px;
-      border-radius: 8px;
-      background: var(--accent-500);
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--accent-600);
       color: #fff;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
+      box-shadow: 0 10px 24px rgba(31, 82, 201, 0.25);
     }
 
     main {
@@ -111,25 +121,62 @@
     }
 
     .hero {
-      padding: 72px 0 56px;
+      padding: 96px 0 72px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle at 30% 30%, rgba(43, 100, 223, 0.18), rgba(43, 100, 223, 0));
+      right: -120px;
+      top: -120px;
+      pointer-events: none;
     }
 
     .hero-inner {
       display: grid;
-      gap: 28px;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-500);
+      border: 1px solid var(--border-100);
+      border-radius: 999px;
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.7);
+      margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: clamp(28px, 4.4vw, 44px);
-      line-height: 1.2;
+      font-size: clamp(30px, 4.6vw, 46px);
+      line-height: 1.15;
       letter-spacing: -0.01em;
-      font-weight: 600;
+      font-weight: 700;
+      font-family: var(--font-display);
     }
 
     .hero p {
       color: var(--ink-700);
       font-size: 16px;
       max-width: 640px;
+      margin-top: 16px;
     }
 
     .hero-actions {
@@ -139,63 +186,54 @@
     }
 
     .btn-primary {
-      padding: 10px 18px;
-      border-radius: 8px;
+      padding: 12px 22px;
+      border-radius: 999px;
       background: var(--accent-600);
       color: #fff;
       font-weight: 600;
       font-size: 14px;
+      box-shadow: 0 12px 24px rgba(31, 82, 201, 0.25);
     }
 
     .btn-ghost {
-      padding: 10px 18px;
-      border-radius: 8px;
+      padding: 12px 22px;
+      border-radius: 999px;
       border: 1px solid var(--border-100);
       color: var(--ink-700);
       font-size: 14px;
-      background: #fff;
+      background: rgba(255, 255, 255, 0.7);
     }
 
-    .hero-highlights {
+    .stat-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 12px;
+      margin-top: 22px;
     }
 
-    .hero-highlight {
-      padding: 14px;
+    .stat-card {
+      padding: 14px 16px;
       border: 1px solid var(--border-100);
-      border-radius: 12px;
-      background: var(--surface-200);
+      border-radius: var(--radius-md);
+      background: #fff;
       font-size: 13px;
       color: var(--ink-700);
+      box-shadow: 0 12px 24px rgba(16, 24, 40, 0.08);
     }
 
-    .hero-highlight strong {
+    .stat-label {
       display: block;
-      font-size: 14px;
-      color: var(--ink-900);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-500);
       margin-bottom: 6px;
     }
 
-    .image-placeholder {
-      border: 1px dashed var(--border-100);
-      border-radius: 12px;
-      background: var(--surface-200);
-      display: grid;
-      place-items: center;
-      color: var(--ink-500);
-      font-size: 12px;
-      text-align: center;
-    }
-
-    .image-wide {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 12px;
-      margin-bottom: 24px;
+    .stat-value {
+      font-size: 14px;
+      color: var(--ink-900);
+      font-weight: 600;
     }
 
     .image-hero {
@@ -204,6 +242,48 @@
       object-fit: cover;
       object-position: center;
       border-radius: 12px;
+    }
+
+    .hero-visual {
+      position: relative;
+      padding: 24px;
+      background: #fff;
+      border: 1px solid var(--border-100);
+      border-radius: 28px;
+      box-shadow: 0 30px 80px rgba(15, 23, 42, 0.12);
+      min-height: 360px;
+    }
+
+    .hero-graphic {
+      width: 100%;
+      height: 280px;
+      display: block;
+    }
+
+    .hero-card {
+      position: absolute;
+      left: 20px;
+      bottom: 22px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border-100);
+      background: #fff;
+      font-size: 12px;
+      color: var(--ink-700);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.1);
+    }
+
+    .hero-card strong {
+      display: block;
+      font-size: 14px;
+      color: var(--ink-900);
+      margin-top: 4px;
+    }
+
+    .hero-card.right {
+      left: auto;
+      right: 20px;
+      bottom: 82px;
     }
 
     .image-portrait {
@@ -217,24 +297,34 @@
       padding: var(--section-padding);
     }
 
+    .section-muted {
+      background: var(--surface-300);
+    }
+
+    .section-head {
+      margin-bottom: 32px;
+    }
+
     .section-title {
-      font-size: clamp(22px, 3.4vw, 32px);
-      font-weight: 600;
+      font-size: clamp(22px, 3.6vw, 34px);
+      font-weight: 700;
       margin-bottom: 16px;
+      font-family: var(--font-display);
     }
 
     .section-lead {
       color: var(--ink-700);
       font-size: 15px;
-      margin-bottom: 32px;
+      margin-bottom: 0;
       max-width: 680px;
     }
 
     .flat-card {
       border: 1px solid var(--border-100);
-      border-radius: 12px;
-      padding: 16px;
+      border-radius: var(--radius-md);
+      padding: 18px;
       background: #fff;
+      box-shadow: 0 18px 36px rgba(17, 24, 39, 0.08);
     }
 
     .grid-2 {
@@ -265,9 +355,10 @@
 
     .pricing-table {
       border: 1px solid var(--border-100);
-      border-radius: 12px;
+      border-radius: 20px;
       overflow: hidden;
       background: #fff;
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
     }
 
     .pricing-row {
@@ -281,7 +372,7 @@
     }
 
     .pricing-row.header {
-      background: var(--surface-200);
+      background: var(--surface-400);
       font-size: 12px;
       color: var(--ink-500);
       font-weight: 600;
@@ -324,8 +415,9 @@
 
     .price-main {
       font-size: 24px;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--ink-900);
+      font-family: var(--font-display);
     }
 
     .price-sub {
@@ -333,6 +425,35 @@
       color: var(--ink-700);
     }
 
+    .price-tier {
+      padding: 12px;
+      border: 1px solid var(--border-100);
+      border-radius: 12px;
+      background: var(--accent-50);
+      display: grid;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .price-tier:last-child {
+      margin-bottom: 0;
+    }
+
+    .price-tier-label {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-500);
+    }
+
+    .price-tier .price-main {
+      font-size: 20px;
+    }
+
+    .price-tier .price-sub {
+      font-size: 12px;
+      color: var(--ink-500);
+    }
     .price-note {
       font-size: 12px;
       color: var(--ink-500);
@@ -349,9 +470,26 @@
     }
 
     .list li::before {
-      content: "・";
+      content: "•";
       margin-right: 4px;
-      color: var(--ink-400);
+      color: var(--accent-600);
+    }
+
+    .list-check li::before {
+      content: "✓";
+      color: var(--accent-600);
+    }
+
+    .issue-list {
+      gap: 10px;
+    }
+
+    .issue-list li {
+      background: #fff;
+      border: 1px solid var(--border-100);
+      border-radius: 12px;
+      padding: 10px 12px;
+      box-shadow: 0 8px 16px rgba(15, 23, 42, 0.06);
     }
 
     .flow {
@@ -369,7 +507,7 @@
     .step-number {
       width: 40px;
       height: 40px;
-      border-radius: 10px;
+      border-radius: 12px;
       background: var(--accent-100);
       color: var(--accent-600);
       display: grid;
@@ -379,9 +517,10 @@
 
     .faq details {
       border: 1px solid var(--border-100);
-      border-radius: 12px;
+      border-radius: 14px;
       padding: 14px 16px;
       background: #fff;
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.06);
     }
 
     .faq summary {
@@ -397,7 +536,8 @@
     }
 
     .contact {
-      background: var(--surface-200);
+      background: linear-gradient(140deg, #eef2fb 0%, #f6f4ef 55%, #ffffff 100%);
+    }
     }
 
     form {
@@ -416,8 +556,8 @@
     textarea,
     select {
       border: 1px solid var(--border-100);
-      border-radius: 8px;
-      padding: 10px 12px;
+      border-radius: 12px;
+      padding: 12px 14px;
       font-size: 14px;
       font-family: var(--font-sans);
       background: #fff;
@@ -442,15 +582,86 @@
     .download-panel {
       display: none;
       padding: 12px;
-      border-radius: 10px;
+      border-radius: 12px;
       background: #fff;
       border: 1px dashed var(--border-100);
       font-size: 13px;
       color: var(--ink-700);
     }
 
+    .cta-band {
+      padding: 48px 20px;
+      background: linear-gradient(110deg, #e7eefc 0%, #f7f6f2 60%, #eef3ff 100%);
+      border-top: 1px solid var(--border-100);
+      border-bottom: 1px solid var(--border-100);
+    }
+
+    .cta-band-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .cta-text {
+      font-size: 18px;
+      font-weight: 600;
+      font-family: var(--font-display);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-50);
+      color: var(--accent-700);
+      border: 1px solid rgba(31, 82, 201, 0.2);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .usecase-card h3 {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .usecase-card p {
+      font-size: 14px;
+      color: var(--ink-700);
+    }
+
+    .usecase-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--surface-300);
+      border: 1px solid var(--border-100);
+      font-size: 11px;
+      color: var(--ink-500);
+      margin-bottom: 10px;
+    }
+
+    .pricing-footnote {
+      text-align: center;
+      color: var(--ink-500);
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 14px;
+    }
+
     .download-panel.show {
       display: block;
+    }
+
+    .contact-grid {
+      align-items: flex-start;
     }
 
     footer {
@@ -486,7 +697,15 @@
       }
 
       .hero {
-        padding-top: 48px;
+        padding-top: 64px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        order: 2;
       }
 
       .pricing-row {
@@ -515,6 +734,10 @@
         letter-spacing: 0.04em;
         margin-bottom: 6px;
       }
+
+      .cta-band-inner {
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -524,10 +747,10 @@
     <div class="container nav">
       <div class="logo">ヨリソイDX</div>
       <nav class="nav-links" aria-label="セクション">
-        <a href="#features">特徴</a>
+        <a href="#problems">課題</a>
+        <a href="#usecases">活用領域</a>
         <a href="#pricing">料金</a>
         <a href="#faq">FAQ</a>
-        <a href="#contact">資料請求</a>
       </nav>
       <a class="nav-cta" href="#contact">資料請求</a>
     </div>
@@ -536,67 +759,179 @@
   <main>
     <section class="hero">
       <div class="container hero-inner">
-        <div>
-          <h1>AIで、業務をもっとシンプルに。</h1>
+        <div class="hero-copy">
+          <div class="eyebrow">医療・介護の現場でも使えるAI業務効率化</div>
+          <h1>コスト削減と生産性向上を、最短ルートで。</h1>
           <p>
-            何から始めるべきか迷う方へ。今の業務に合う改善ポイントを整理し、
-            効果が出やすい一歩から進めます。料金は最初に明確化し、運用まで支えます。
+            多拠点・多業務の現場で「どこからAI化すべきか」を整理。
+            1週間デモで成果のイメージを先に確認し、失敗しない投資へ導きます。
           </p>
           <div class="hero-actions">
             <a class="btn-primary" href="#contact">資料請求をする</a>
             <a class="btn-ghost" href="#pricing">料金を見る</a>
           </div>
+          <div class="stat-grid">
+            <div class="stat-card">
+              <span class="stat-label">1週間デモ</span>
+              <span class="stat-value">ヒアリング後、最短1週間で実機デモを提示</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">明瞭な料金</span>
+              <span class="stat-value">税別を基準に、見積もりのブレを抑制</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">多拠点対応</span>
+              <span class="stat-value">拠点ごとの稼働・対応状況を一画面で把握</span>
+            </div>
+          </div>
         </div>
-        <div class="hero-highlights">
-          <div class="hero-highlight">
-            <strong>迷わず始められる</strong>
-            何から手を付けるかがすぐ分かる
+        <div class="hero-visual" aria-hidden="true">
+          <svg class="hero-graphic" viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg">
+            <rect x="24" y="24" width="472" height="220" rx="24" fill="#f3f6ff" stroke="#d9e4fb" />
+            <rect x="60" y="58" width="210" height="32" rx="10" fill="#ffffff" stroke="#dfe3ec" />
+            <rect x="60" y="106" width="160" height="32" rx="10" fill="#ffffff" stroke="#dfe3ec" />
+            <rect x="60" y="154" width="260" height="32" rx="10" fill="#ffffff" stroke="#dfe3ec" />
+            <path d="M80 214 C150 182 214 210 280 170 C340 136 412 150 460 118" stroke="#2b64df"
+              stroke-width="3" fill="none" />
+            <circle cx="150" cy="186" r="6" fill="#2b64df" />
+            <circle cx="280" cy="170" r="6" fill="#2b64df" />
+            <circle cx="412" cy="150" r="6" fill="#2b64df" />
+            <rect x="320" y="64" width="140" height="24" rx="8" fill="#e6eefc" />
+            <rect x="320" y="98" width="120" height="24" rx="8" fill="#e6eefc" />
+          </svg>
+          <div class="hero-card">
+            拠点状況の一括把握
+            <strong>リアルタイムに可視化</strong>
           </div>
-          <div class="hero-highlight">
-            <strong>費用の見通しが立つ</strong>
-            税込価格を先に提示
-          </div>
-          <div class="hero-highlight">
-            <strong>現場で使い続けられる</strong>
-            導入後の定着までサポート
+          <div class="hero-card right">
+            入力負担を最小化
+            <strong>現場の手戻りを削減</strong>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="problems" class="section-muted">
       <div class="container">
-        <h2 class="section-title">AIで業務がどう楽になるか、先に見えます。</h2>
-        <p class="section-lead">
-          「とりあえずAIを使ってみたい」という段階でも大丈夫です。
-          まず成果が出やすいポイントを整理し、無理なく始められる形にします。
-        </p>
-        <img src="assets/workflow_ai_concept.png" alt="AIによる業務効率化のイメージ" class="image-wide">
-        <div class="grid-2">
+        <div class="section-head">
+          <div class="eyebrow">課題と原因</div>
+          <h2 class="section-title">やりたいことは明確でも、原因が散らばっている</h2>
+          <p class="section-lead">
+            多拠点運営の現場では、情報と作業が分断されがちです。AI導入の前に、
+            「何がボトルネックなのか」を整理することが成果への最短ルートになります。
+          </p>
+        </div>
+        <div class="faq-list">
           <div class="flat-card">
-            <h3>相談後に分かること</h3>
-            <ul class="list">
-              <li>何をAI化すべきかが明確になる</li>
-              <li>優先順位が決まり、迷いが減る</li>
-              <li>不要な開発を避けられる</li>
+            <h3>現場で起きている課題</h3>
+            <ul class="list list-check issue-list">
+              <li>書類作成・報告が手作業で時間を取られる</li>
+              <li>拠点ごとの状況把握に遅れが出る</li>
+              <li>問い合わせ対応が属人化している</li>
+              <li>報告書・議事録の品質がバラつく</li>
             </ul>
           </div>
           <div class="flat-card">
-            <h3>導入後に得られること</h3>
-            <ul class="list">
-              <li>現場が使い続けられる状態になる</li>
-              <li>担当者に依存しない運用ができる</li>
-              <li>相談先があり、不安が減る</li>
+            <h3>原因</h3>
+            <ul class="list issue-list">
+              <li>情報が紙・Excel・チャットに散在</li>
+              <li>入力負担が高く、現場が疲弊</li>
+              <li>拠点ごとの運用ルールが違う</li>
+              <li>標準化の土台が整っていない</li>
             </ul>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="solution">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">解決アプローチ</div>
+          <h2 class="section-title">課題の棚卸し → AI適合判断 → 1週間デモ</h2>
+          <p class="section-lead">
+            机上の空論ではなく、実際に触れるデモで「何がどう変わるか」を具体化します。
+          </p>
+        </div>
+        <div class="grid-3">
+          <div class="flat-card feature">
+            <h3>課題の棚卸し</h3>
+            <p>現場ヒアリングで優先順位を整理し、投資対効果が出る順に並べます。</p>
+          </div>
+          <div class="flat-card feature">
+            <h3>AI適合の判断</h3>
+            <p>AIで解決できるもの・できないものを見極め、無駄な開発を避けます。</p>
+          </div>
+          <div class="flat-card feature">
+            <h3>1週間デモ</h3>
+            <p>短期デモで成果のイメージを掴み、導入判断の精度を高めます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="usecases" class="section-muted">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">活用領域</div>
+          <h2 class="section-title">多拠点・多業務の効率化に強いユースケース</h2>
+          <p class="section-lead">
+            看護・介護を中心に、医療・教育・物流・小売など幅広い業界で展開できます。
+          </p>
+        </div>
+        <div class="grid-3">
+          <div class="flat-card usecase-card">
+            <span class="usecase-tag">ナレッジ</span>
+            <h3>社内FAQ・ナレッジ検索</h3>
+            <p>過去の対応履歴や手順書を横断検索し、現場対応を標準化します。</p>
+          </div>
+          <div class="flat-card usecase-card">
+            <span class="usecase-tag">多拠点管理</span>
+            <h3>状況一括管理・リマインド</h3>
+            <p>拠点ごとの進捗・対応状況を一画面で可視化し、抜け漏れを防ぎます。</p>
+          </div>
+          <div class="flat-card usecase-card">
+            <span class="usecase-tag">文書自動化</span>
+            <h3>報告書・書面作成の自動化</h3>
+            <p>事故報告書やメール文面の作成を支援し、作業時間を短縮します。</p>
+          </div>
+          <div class="flat-card usecase-card">
+            <span class="usecase-tag">レポート</span>
+            <h3>議事録・提案書の自動作成</h3>
+            <p>会議内容を均一フォーマットに整え、共有の質を高めます。</p>
+          </div>
+          <div class="flat-card usecase-card">
+            <span class="usecase-tag">最適化</span>
+            <h3>在庫・シフト・人材配置</h3>
+            <p>拠点間の人材移動や在庫調整を効率化する仕組みを構築します。</p>
+          </div>
+          <div class="flat-card usecase-card">
+            <span class="usecase-tag">入力負担</span>
+            <h3>現場入力の最小化</h3>
+            <p>必要情報だけを短時間で入力できる設計で、現場の負担を軽減します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container cta-band-inner">
+        <div>
+          <div class="pill">無料相談つき</div>
+          <div class="cta-text">まずは資料で、全体像と費用感を把握しませんか？</div>
+          <p class="form-note">送信後に資料ダウンロードが表示されます。</p>
+        </div>
+        <a class="btn-primary" href="#contact">資料請求をする</a>
       </div>
     </section>
 
     <section id="features">
       <div class="container">
-        <h2 class="section-title">ヨリソイDXの特徴</h2>
-        <p class="section-lead">「よく分からないまま契約させられる」不安をなくすための設計です。</p>
+        <div class="section-head">
+          <div class="eyebrow">設計思想</div>
+          <h2 class="section-title">無理なく、失敗しにくい導入にこだわります</h2>
+          <p class="section-lead">数字を誇張せず、現場で使い続けられる形に整えます。</p>
+        </div>
         <div class="grid-3">
           <div class="flat-card feature">
             <h3>不要な開発を勧めない</h3>
@@ -604,11 +939,11 @@
           </div>
           <div class="flat-card feature">
             <h3>明瞭な料金</h3>
-            <p>費用の見通しを最初に提示し、後からの不安を減らします。</p>
+            <p>費用の見通しを最初に提示し、意思決定のスピードを高めます。</p>
           </div>
           <div class="flat-card feature">
             <h3>導入後も安心</h3>
-            <p>「導入して終わり」にせず、現場で使い続けられる状態にします。</p>
+            <p>「導入して終わり」にせず、現場に定着するまで伴走します。</p>
           </div>
         </div>
       </div>
@@ -616,8 +951,11 @@
 
     <section id="pricing" class="pricing">
       <div class="container">
-        <h2 class="section-title">料金</h2>
-        <p class="section-lead">「結局いくらかかるのか」が最初に分かるように設計しています。</p>
+        <div class="section-head">
+          <div class="eyebrow">料金</div>
+          <h2 class="section-title">料金は先に明確化（税別をメイン表示）</h2>
+          <p class="section-lead">税別価格を基準に、税込みは括弧で併記しています。</p>
+        </div>
         <div class="pricing-table">
           <div class="pricing-row header">
             <div class="pricing-cell">プラン</div>
@@ -651,7 +989,7 @@
             <div class="pricing-cell" data-label="価格">
               <div class="price-stack">
                 <div class="price-main">税別 50万円</div>
-                <div class="price-sub">税込 55万円</div>
+                <div class="price-sub">（税込 55万円）</div>
               </div>
             </div>
             <div class="pricing-cell" data-label="主な内容">
@@ -668,9 +1006,20 @@
               <div class="pricing-desc">オンライン研修 + 録画教材</div>
             </div>
             <div class="pricing-cell" data-label="価格">
-              <div class="price-stack">
+              <div class="price-tier">
+                <div class="price-tier-label">1〜5名</div>
                 <div class="price-main">税別 30万円</div>
-                <div class="price-sub">税込 33万円</div>
+                <div class="price-sub">（税込 33万円）</div>
+              </div>
+              <div class="price-tier">
+                <div class="price-tier-label">6〜9名</div>
+                <div class="price-main">税別 25万円</div>
+                <div class="price-sub">（税込 27.5万円）</div>
+              </div>
+              <div class="price-tier">
+                <div class="price-tier-label">10名以上</div>
+                <div class="price-main">税別 20万円</div>
+                <div class="price-sub">（税込 22万円）</div>
               </div>
             </div>
             <div class="pricing-cell" data-label="主な内容">
@@ -679,26 +1028,27 @@
                 <li>役員向け：20〜30時間の短期コース</li>
                 <li>AIの基礎から要件定義まで</li>
               </ul>
-              <div
-                style="margin-top: 16px; padding: 10px; background: #e7f2ff; border-radius: 8px; font-size: 13px; color: var(--accent-600);">
-                <strong>最大50%助成対象</strong><br>
-                人材開発支援助成金の対象となる可能性があります。<br>
-                実質、負担を大幅に抑えられる可能性があるので、詳しくはご相談ください。
+              <div class="flat-card" style="margin-top: 16px; background: #f3f6ff;">
+                <strong>助成金の対象となる可能性があります</strong><br>
+                人材開発支援助成金の対象になる場合があります。<br>
+                詳細はご相談ください。
               </div>
             </div>
           </div>
         </div>
-        <div class="flat-card" style="margin-top: 16px;">
-          ここに記載の3プラン以外にも、より充実した支援内容をご用意しています。
-          ご興味のある方は、個別にご相談ください。
+        <div class="flat-card pricing-footnote" style="margin-top: 16px;">
+          記載内容以外の支援についても、ご要望に応じて個別にご案内します。
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="flow">
       <div class="container">
-        <h2 class="section-title">ご利用の流れ</h2>
-        <p class="section-lead">資料請求から、迷わず進められるようシンプルな流れにしています。</p>
+        <div class="section-head">
+          <div class="eyebrow">導入フロー</div>
+          <h2 class="section-title">資料請求から、迷わず進められる流れ</h2>
+          <p class="section-lead">ヒアリングから試験導入までをシンプルに整理しました。</p>
+        </div>
         <div class="flow">
           <div class="flat-card flow-step">
             <div class="step-number">1</div>
@@ -711,21 +1061,28 @@
             <div class="step-number">2</div>
             <div>
               <strong>ヒアリング</strong>
-              <div class="form-note">課題とご要望を確認</div>
+              <div class="form-note">課題の洗い出し</div>
             </div>
           </div>
           <div class="flat-card flow-step">
             <div class="step-number">3</div>
             <div>
-              <strong>ご提案</strong>
-              <div class="form-note">最適な導入プランをご提示</div>
+              <strong>AI適合判断</strong>
+              <div class="form-note">解決可能性を見極め</div>
             </div>
           </div>
           <div class="flat-card flow-step">
             <div class="step-number">4</div>
             <div>
-              <strong>実行・支援</strong>
-              <div class="form-note">開発・研修・運用を伴走</div>
+              <strong>1週間デモ</strong>
+              <div class="form-note">具体的な成果を確認</div>
+            </div>
+          </div>
+          <div class="flat-card flow-step">
+            <div class="step-number">5</div>
+            <div>
+              <strong>試験導入</strong>
+              <div class="form-note">現場で運用開始</div>
             </div>
           </div>
         </div>
@@ -734,23 +1091,26 @@
 
     <section id="faq" class="faq">
       <div class="container">
-        <h2 class="section-title">FAQ</h2>
+        <div class="section-head">
+          <div class="eyebrow">FAQ</div>
+          <h2 class="section-title">よくある質問</h2>
+        </div>
         <div class="grid-2">
           <details>
             <summary>相談だけでも大丈夫ですか？</summary>
             <p>はい、無料相談のみでも問題ありません。状況に応じて導入を見送る判断も正直にお伝えします。</p>
           </details>
           <details>
-            <summary>補助金・助成金は使えますか？</summary>
-            <p>AI研修サービスは人材開発支援助成金（リスキリング支援コース）の対象となる可能性があります。</p>
+            <summary>看護・介護以外でも使えますか？</summary>
+            <p>はい、医療・教育・物流・小売・不動産など幅広い業界で活用可能です。</p>
           </details>
           <details>
-            <summary>対面での対応は可能ですか？</summary>
-            <p>はい、対面とオンラインの両方に対応しています。</p>
+            <summary>デモはどれくらいで見られますか？</summary>
+            <p>ヒアリング後、最短1週間でデモをご用意します。</p>
           </details>
           <details>
-            <summary>小規模でも依頼できますか？</summary>
-            <p>はい、規模に合わせて最小構成での支援が可能です。</p>
+            <summary>研修の人数別価格はどうなりますか？</summary>
+            <p>1〜5名は税込33万円、6〜9名は税込27.5万円、10名以上は税込22万円です。</p>
           </details>
           <details>
             <summary>機密情報の取り扱いはどうなりますか？</summary>
@@ -764,57 +1124,28 @@
       </div>
     </section>
 
-    <section id="contact" style="background-color: #f0f7ff; padding: 80px 20px;">
+    <section id="contact" class="contact">
       <div class="container">
-        <h2 class="section-title">資料請求・無料相談</h2>
-        <p class="section-lead">3分でわかる「AI活用地図」を無料でお渡ししています。</p>
-        <div class="grid-2" style="align-items: flex-start;">
-
-          <!-- 左カラム：ベネフィット -->
-          <div class="benefit-card" style="padding: 0 10px;">
-            <h3 style="font-size: 24px; margin-bottom: 24px; color: var(--ink-600);">
-              <span style="color: var(--accent-600);">迷いをなくす</span><br>導入ガイドブック
-            </h3>
-            <p style="margin-bottom: 32px; line-height: 1.8; color: var(--ink-500);">
-              「どこから手を付けるべきか」「費用対効果はどうなるか」。<br>
-              多くの企業が抱える疑問を解消するためのガイドブックです。<br>
-              無理な営業は一切いたしませんので、情報収集にお役立てください。
+        <div class="section-head">
+          <div class="eyebrow">資料請求</div>
+          <h2 class="section-title">資料請求・無料相談</h2>
+          <p class="section-lead">3分でわかる「AI活用地図」を無料でお渡ししています。</p>
+        </div>
+        <div class="grid-2 contact-grid">
+          <div class="flat-card">
+            <div class="pill">無料相談つき</div>
+            <h3 style="margin-top: 16px;">導入判断に必要な情報を短く整理</h3>
+            <p class="form-note" style="margin-top: 8px;">
+              無理な営業は行わず、現場で成果が出る一歩目だけをご提案します。
             </p>
-
-            <ul class="list" style="gap: 20px;">
-              <li style="display: flex; align-items: flex-start; gap: 12px;">
-                <div
-                  style="background: var(--accent-600); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                  📄</div>
-                <div>
-                  <strong>失敗しない3つのステップ</strong><br>
-                  <span style="font-size: 13px; color: var(--ink-400);">小規模から始めて成果を出すための具体的な手順を解説。</span>
-                </div>
-              </li>
-              <li style="display: flex; align-items: flex-start; gap: 12px;">
-                <div
-                  style="background: var(--accent-600); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                  💰</div>
-                <div>
-                  <strong>費用感と助成金活用</strong><br>
-                  <span style="font-size: 13px; color: var(--ink-400);">概算コストや、使える助成金の条件をわかりやすく整理。</span>
-                </div>
-              </li>
-              <li style="display: flex; align-items: flex-start; gap: 12px;">
-                <div
-                  style="background: var(--accent-600); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                  🏢</div>
-                <div>
-                  <strong>業界別の導入事例集</strong><br>
-                  <span style="font-size: 13px; color: var(--ink-400);">同業他社がどのような課題をどう解決したかを知れます。</span>
-                </div>
-              </li>
+            <ul class="list list-check" style="margin-top: 20px;">
+              <li>失敗しない導入のステップを理解</li>
+              <li>費用感・助成金の使い方を整理</li>
+              <li>業界別の活用事例を把握</li>
             </ul>
           </div>
 
-          <!-- 右カラム：フォーム -->
-          <div class="flat-card"
-            style="background: white; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: none; border-radius: 16px;">
+          <div class="flat-card">
             <form id="request-form" novalidate>
               <h3 style="margin-bottom: 20px; font-size: 18px;">資料請求フォーム</h3>
               <label>
@@ -833,8 +1164,24 @@
               </div>
               <div class="form-row">
                 <label>
-                  従業員規模（任意）
-                  <select name="size">
+                  業種（必須）
+                  <select name="industry" required>
+                    <option value="">選択してください</option>
+                    <option value="care">看護・介護</option>
+                    <option value="medical">医療</option>
+                    <option value="beauty">美容</option>
+                    <option value="education">教育</option>
+                    <option value="manufacturing">製造</option>
+                    <option value="logistics">物流</option>
+                    <option value="retail">小売・多店舗</option>
+                    <option value="real-estate">不動産</option>
+                    <option value="construction">建設</option>
+                    <option value="other">その他</option>
+                  </select>
+                </label>
+                <label>
+                  従業員規模（必須）
+                  <select name="size" required>
                     <option value="">選択してください</option>
                     <option value="1-10">1〜10名</option>
                     <option value="11-30">11〜30名</option>
@@ -844,25 +1191,26 @@
                     <option value="301+">301名以上</option>
                   </select>
                 </label>
-                <label>
-                  電話番号（任意）
-                  <input type="tel" name="phone" autocomplete="tel" />
-                </label>
               </div>
+              <label>
+                電話番号（必須）
+                <input type="tel" name="phone" autocomplete="tel" required />
+              </label>
               <label>
                 メールアドレス（必須）
                 <input type="email" name="email" autocomplete="email" required />
               </label>
               <label>
-                相談内容（必須）
-                <textarea name="message" required placeholder="導入検討の背景や課題を簡単に教えてください"></textarea>
+                課題・相談内容（必須）
+                <textarea name="message" required placeholder="現状の課題、確認したいことを簡単に教えてください"></textarea>
               </label>
               <label>
                 <input type="checkbox" name="consent" required />
                 <span>個人情報の取り扱いに同意します</span>
               </label>
-              <button class="btn-primary" type="submit"
-                style="width: 100%; padding: 14px; font-size: 16px;">資料請求を送信</button>
+              <button class="btn-primary" type="submit" style="width: 100%; padding: 14px; font-size: 16px;">
+                資料請求を送信
+              </button>
               <span class="form-note" id="form-status"
                 style="display: block; text-align: center; margin-top: 12px;">送信後に資料ダウンロードが表示されます。</span>
               <div class="download-panel" id="download-panel">
@@ -888,7 +1236,6 @@
   </footer>
 
   <script>
-    const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1463858726661394525/0vtiCqC19J1ELvuAUwv9mxOfsjZGtgpqgM_S52ud1gE7oi3Dwzaaxtq2fnRoFro74xcy";
     const form = document.getElementById("request-form");
     const status = document.getElementById("form-status");
     const downloadPanel = document.getElementById("download-panel");
@@ -905,32 +1252,18 @@
       const data = Object.fromEntries(formData.entries());
       let submitted = true;
 
-      // Discord Webhookに送信
+      // APIエンドポイントに送信
       try {
-        const embed = {
-          title: "📩 新しい資料請求がありました",
-          color: 0x4da3ff,
-          fields: [
-            { name: "会社名", value: data.company || "未入力", inline: true },
-            { name: "氏名", value: data.name || "未入力", inline: true },
-            { name: "役職", value: data.role || "未入力", inline: true },
-            { name: "従業員規模", value: data.size || "未選択", inline: true },
-            { name: "電話番号", value: data.phone || "未入力", inline: true },
-            { name: "メールアドレス", value: data.email || "未入力", inline: false },
-            { name: "相談内容", value: data.message || "未入力", inline: false },
-          ],
-          timestamp: new Date().toISOString(),
-          footer: { text: "ヨリソイDX 資料請求フォーム" }
-        };
-
-        const response = await fetch(DISCORD_WEBHOOK, {
+        const response = await fetch("/api/lead", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ embeds: [embed] }),
+          body: JSON.stringify(data),
         });
-        submitted = response.ok;
+
+        const result = await response.json();
+        submitted = result.ok;
       } catch (error) {
-        console.error("Discord通知エラー:", error);
+        console.error("送信エラー:", error);
         submitted = false;
       }
 
